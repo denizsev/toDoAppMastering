@@ -1,51 +1,35 @@
-# Görevler
+# Tasks (Görevler)
 
-Sözdizimsiz, tamamen dokunmatik, tek dosyalık bir günlük yapılacaklar (to-do) uygulaması.
-Kurulum yok, derleme adımı yok, sunucu yok, hesap yok. Verin sadece kendi tarayıcında kalır.
+A touch-first to-do app in a single HTML file. You type only the task title; date, time, list and priority are chosen by tapping chips. No sign-up, no build step, no server.
 
-**[Canlı demo →](#)** *(GitHub Pages linkini yayınladıktan sonra buraya ekle)*
+**[Open the live app →](https://denizsev.github.io/toDoAppMastering/)** (interface in Turkish)
 
----
+## Why
 
-## Neden
+Most to-do apps either ask you to learn a syntax like `tomorrow 15:00 #school p1`, or carry desktop habits (shortcuts, sidebars, hover menus) over to the phone. This one is built for the thumb.
 
-Çoğu to-do uygulaması ya "yarın 15:00 #okul p1" gibi bir sözdizimi öğrenmeni ister, ya da
-masaüstü alışkanlıklarını (klavye kısayolu, sidebar, hover menü) telefona olduğu gibi taşır.
-Bu uygulama tam tersini yapıyor: her şey dokunma. Yazman gereken tek şey görevin başlığı —
-tarih, saat, liste ve öncelik hepsi çip'lere dokunarak seçiliyor.
+## Features
 
-## Özellikler
+- **No syntax**: tap the + button, type a title, pick date, time, list and priority with chips.
+- **Swipe gestures**: swipe right to complete, left to snooze or delete (also reachable with a long press).
+- **Plan my day**: go through overdue tasks one by one with large buttons.
+- **Lists**: an inbox plus your own lists.
+- **Repeating tasks**: daily, weekdays, weekly, monthly.
+- **Dark mode**, a progress ring and undo for deletes (5 seconds).
+- **Your data stays local**: tasks are saved in the browser's `localStorage` and never sent anywhere.
+- **Add to home screen**: opens full screen like an app on iOS.
 
-- **Sıfır sözdizimi** — FAB'a dokun, başlığı yaz, çip'lerle tarih/saat/liste/öncelik seç
-- **Kaydırma jestleri** — sağa kaydır tamamla, sola kaydır ertele/sil (uzun-bas ile de erişilebilir)
-- **Günü Planla** — gecikmiş görevleri tek tek, büyük dokunma butonlarıyla triyaj et
-- **Listeler** — Gelen Kutusu + kendi oluşturduğun listeler
-- **Tekrarlayan görevler** — her gün / hafta içi / her hafta / her ay
-- **Koyu mod**, ilerleme halkası, geri alınabilir silme (5 saniyelik "Geri al")
-- **Çevrimdışı çalışır** — veri tarayıcının `localStorage`'ında tutulur, hiçbir yere gönderilmez
-- **Ana ekrana eklenebilir** — telefonda "Ana Ekrana Ekle" ile gerçek bir uygulama gibi açılır
+## Tech stack
 
-## Kullanmaya başla
+Vanilla JavaScript, HTML and CSS in one file, no dependencies.
 
-1. [Canlı demo linkini](#) telefonunda aç
-2. Paylaş menüsünden **"Ana Ekrana Ekle"**'ye dokun
-3. Artık ana ekranında bir ikon — dokun, kullan
+- Dates are handled as calendar days (`YYYY-MM-DD`) to avoid time-zone and daylight-saving bugs.
+- Reordering uses [fractional indexing](https://www.figma.com/blog/realtime-editing-of-ordered-sequences/), so moving one task never renumbers the others.
 
-Kendi cihazına indirip de kullanabilirsin: `index.html` dosyasını indir, çift tıkla, açılsın.
+## Run locally
 
-## Teknik
+Download `index.html` and open it in a browser. That's all.
 
-Vanilla JavaScript, HTML, CSS — hiçbir framework veya bağımlılık yok. Tek dosya, ~50KB.
-Veri kalıcılığı `localStorage` ile sağlanıyor; tarih hesaplamaları saat dilimi/DST hatalarından
-kaçınmak için takvim günü (`YYYY-MM-DD`) bazlı yapılıyor. Sürükleme/sıralama için
-[fractional indexing](https://www.figma.com/blog/realtime-editing-of-ordered-sequences/) kullanılıyor.
+## License
 
-## Bu projeyi kendi GitHub Pages'inde yayınlama
-
-Bu klasördeki dosyaları yeni bir GitHub deposuna yükleyip **Settings → Pages** üzerinden
-yayınlayabilirsin — kod yazmana ya da bir şey kurmana gerek yok. Adımlar için depo
-açıklamasına veya paylaşılan sohbete bak.
-
-## Lisans
-
-MIT — [LICENSE](LICENSE) dosyasına bak. Kopyala, değiştir, kendi ihtiyacına uyarla.
+[MIT](LICENSE)
